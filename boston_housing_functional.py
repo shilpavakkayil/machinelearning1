@@ -5,6 +5,7 @@ from tensorflow import keras
 import numpy as np
 import pandas as pd
 df = pd.read_csv("HousingData.csv")
+df = df.fillna(0)
 X, y = df.values[:, :-1], df.values[:, -1]
 # split into train and test datasets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
